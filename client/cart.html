@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Cart | Foodie</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cart.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+    <main class="cart-container">
+
+        <!-- Header -->
+        <header class="cart-header">
+
+            <div>
+                <a href="explore-food.html" class="back-link">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Continue Shopping
+                </a>
+
+                <h1>My <span>Cart</span></h1>
+                <p>Review your selected delicious food.</p>
+            </div>
+
+            <div class="cart-header-icon">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+
+        </header>
+
+        <!-- Cart Layout -->
+        <section class="cart-layout">
+
+            <!-- Cart Items -->
+            <div class="cart-items-section">
+
+                <div class="cart-section-heading">
+                    <h2>Your Items</h2>
+                    <span id="cartItemCount">0 Items</span>
+                </div>
+
+                <div id="cartItems">
+
+                    <!-- Cart items generated using JavaScript -->
+
+                </div>
+
+                <!-- Empty Cart -->
+                <div id="emptyCart" class="empty-cart" hidden>
+
+                    <i class="fa-solid fa-cart-shopping"></i>
+
+                    <h3>Your cart is empty</h3>
+
+                    <p>Looks like you haven't added anything yet.</p>
+
+                    <a href="explore-food.html">
+                        Explore Food
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- Order Summary -->
+            <aside class="order-summary">
+
+                <h2>Order Summary</h2>
+
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <strong id="subtotal">₹0</strong>
+                </div>
+
+                <div class="summary-row">
+                    <span>Delivery Fee</span>
+                    <strong id="deliveryFee">₹40</strong>
+                </div>
+
+                <div class="summary-row">
+                    <span>Tax (5%)</span>
+                    <strong id="tax">₹0</strong>
+                </div>
+
+                <div class="summary-divider"></div>
+
+                <div class="summary-total">
+                    <span>Total Amount</span>
+                    <strong id="grandTotal">₹0</strong>
+                </div>
+
+                <button id="checkoutButton" class="checkout-btn">
+                    Proceed to Checkout
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+                <p class="secure-message">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    Secure checkout
+                </p>
+
+            </aside>
+
+        </section>
+
+    </main>
+
+    <script src="js/cart.js"></script>
+
+</body>
+</html>

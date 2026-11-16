@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Explore Food | Foodie</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/explore-food.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+    <main class="explore-container">
+
+        <!-- Page Header -->
+        <header class="explore-header">
+
+            <div>
+                <a href="customer-dashboard.html" class="back-link">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Back to Dashboard
+                </a>
+
+                <h1>Explore <span>Delicious Food</span></h1>
+                <p>Discover delicious meals prepared just for you.</p>
+            </div>
+
+            <a href="cart.html" class="cart-button">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span>My Cart</span>
+                <span class="cart-count">0</span>
+            </a>
+
+        </header>
+
+        <!-- Search Section -->
+        <section class="food-search-section">
+
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    id="foodSearch"
+                    placeholder="Search for pizza, burger, biryani..."
+                >
+
+                <button id="searchButton">Search</button>
+            </div>
+
+        </section>
+
+        <!-- Categories -->
+        <section class="food-category-section">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Food Categories</h2>
+                    <p>Choose your favourite category</p>
+                </div>
+            </div>
+
+            <div class="category-list" id="categoryList">
+
+                <button class="category-btn active" data-category="All">
+                    <i class="fa-solid fa-utensils"></i>
+                    <span>All Food</span>
+                </button>
+
+                <button class="category-btn" data-category="Pizza">
+                    <i class="fa-solid fa-pizza-slice"></i>
+                    <span>Pizza</span>
+                </button>
+
+                <button class="category-btn" data-category="Burger">
+                    <i class="fa-solid fa-burger"></i>
+                    <span>Burger</span>
+                </button>
+
+                <button class="category-btn" data-category="Biryani">
+                    <i class="fa-solid fa-bowl-food"></i>
+                    <span>Biryani</span>
+                </button>
+
+                <button class="category-btn" data-category="Drinks">
+                    <i class="fa-solid fa-mug-hot"></i>
+                    <span>Drinks</span>
+                </button>
+
+                <button class="category-btn" data-category="Dessert">
+                    <i class="fa-solid fa-ice-cream"></i>
+                    <span>Dessert</span>
+                </button>
+
+                <button class="category-btn" data-category="Snacks">
+                    <i class="fa-solid fa-cookie-bite"></i>
+                    <span>Snacks</span>
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- Food Items -->
+        <section class="food-items-section">
+
+            <div class="section-heading food-heading">
+                <div>
+                    <h2>Popular Dishes</h2>
+                    <p>Explore our delicious food collection</p>
+                </div>
+
+                <span id="foodCount">0 Items</span>
+            </div>
+
+            <div class="food-grid" id="foodGrid">
+
+                <!-- Food cards will be loaded here using JavaScript -->
+
+            </div>
+
+            <p id="emptyMessage" class="empty-message" hidden>
+                No food items found. Try another search.
+            </p>
+
+        </section>
+
+    </main>
+
+    <script src="js/food-data.js"></script>
+    <script src="js/explore-food.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,194 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Orders | Foodie</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/my-orders.css">
+
+</head>
+
+<body>
+
+    <main class="my-orders-container">
+
+        <!-- PAGE HEADER -->
+        <header class="orders-page-header">
+
+            <div class="orders-heading">
+
+                <a href="customer-dashboard.html" class="back-dashboard">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Dashboard
+                </a>
+
+                <h1>My <span>Orders</span></h1>
+
+                <p>Track and manage all your food orders.</p>
+
+            </div>
+
+            <a href="explore-food.html" class="order-food-btn">
+                <i class="fa-solid fa-utensils"></i>
+                Order Food
+            </a>
+
+        </header>
+
+
+        <!-- ORDER STATISTICS -->
+        <section class="order-stats">
+
+            <div class="order-stat-card">
+
+                <div class="order-stat-icon orange">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                </div>
+
+                <div>
+                    <p>Total Orders</p>
+                    <h2 id="totalOrders">0</h2>
+                </div>
+
+            </div>
+
+
+            <div class="order-stat-card">
+
+                <div class="order-stat-icon green">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+
+                <div>
+                    <p>Delivered</p>
+                    <h2 id="deliveredOrders">0</h2>
+                </div>
+
+            </div>
+
+
+            <div class="order-stat-card">
+
+                <div class="order-stat-icon blue">
+                    <i class="fa-solid fa-clock"></i>
+                </div>
+
+                <div>
+                    <p>Active Orders</p>
+                    <h2 id="activeOrders">0</h2>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ORDER FILTERS -->
+        <section class="orders-section">
+
+            <div class="orders-toolbar">
+
+                <div>
+                    <h2>Order History</h2>
+                    <p>All your previous and current orders.</p>
+                </div>
+
+                <div class="orders-filter">
+
+                    <label for="orderStatusFilter">
+                        Filter:
+                    </label>
+
+                    <select id="orderStatusFilter">
+
+                        <option value="all">All Orders</option>
+                        <option value="confirmed">Confirmed</option>
+                        <option value="preparing">Preparing</option>
+                        <option value="out_for_delivery">Out for Delivery</option>
+                        <option value="delivered">Delivered</option>
+                        <option value="cancelled">Cancelled</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- LOADING MESSAGE -->
+            <div id="ordersLoading" class="orders-message">
+                <i class="fa-solid fa-spinner fa-spin"></i>
+                <p>Loading your orders...</p>
+            </div>
+
+
+            <!-- ERROR MESSAGE -->
+            <div id="ordersError" class="orders-message error-message" hidden>
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <p id="ordersErrorText"></p>
+                <button type="button" id="retryOrdersButton">
+                    Try Again
+                </button>
+            </div>
+
+
+            <!-- EMPTY ORDERS -->
+            <div id="emptyOrders" class="empty-orders" hidden>
+
+                <div class="empty-orders-icon">
+                    <i class="fa-solid fa-receipt"></i>
+                </div>
+
+                <h3>No Orders Found</h3>
+
+                <p>
+                    You haven't placed any orders yet.
+                    Start exploring delicious food!
+                </p>
+
+                <a href="explore-food.html">
+                    Explore Food
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+
+            <!-- ORDERS LIST -->
+            <div id="ordersList" class="orders-list">
+
+                <!-- Orders will be loaded dynamically using JavaScript -->
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="js/my-orders.js"></script>
+
+</body>
+</html>

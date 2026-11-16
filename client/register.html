@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sign Up - Foodie</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <main class="auth-page">
+
+        <!-- Left Side -->
+        <section class="auth-image-section">
+
+            <div class="auth-overlay"></div>
+
+            <div class="auth-image-content">
+
+                <a href="index.html" class="logo">
+                    <i class="fa-solid fa-utensils"></i>
+                    Foodie<span>.</span>
+                </a>
+
+                <div class="auth-image-text">
+                    <span>FRESH & DELICIOUS</span>
+
+                    <h1>
+                        Good Food,
+                        <span>Good Mood.</span>
+                    </h1>
+
+                    <p>
+                        Join Foodie today and discover delicious meals
+                        delivered fresh to your doorstep.
+                    </p>
+                </div>
+
+                <p class="auth-image-footer">
+                    © 2026 Foodie. All rights reserved.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Right Side -->
+        <section class="auth-form-section">
+
+            <div class="auth-form-container">
+
+                <a href="index.html" class="back-home">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Back to Home
+                </a>
+
+                <div class="auth-heading">
+                    <h2>Create Your Account</h2>
+
+                    <p>
+                        Join us and start ordering your favourite food.
+                    </p>
+                </div>
+
+
+                <!-- Registration Form -->
+                <form class="auth-form" id="registerForm">
+
+                    <!-- Username -->
+                    <div class="form-group">
+                        <label for="username">Full Name</label>
+
+                        <div class="input-wrapper">
+                            <i class="fa-regular fa-user"></i>
+
+                            <input
+                                type="text"
+                                id="username"
+                                name="username"
+                                placeholder="Enter your full name"
+                                autocomplete="name"
+                                required
+                            >
+                        </div>
+                    </div>
+
+
+                    <!-- Email -->
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+
+                        <div class="input-wrapper">
+                            <i class="fa-regular fa-envelope"></i>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Enter your email"
+                                autocomplete="email"
+                                required
+                            >
+                        </div>
+                    </div>
+
+
+                    <!-- Phone -->
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-phone"></i>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                placeholder="Enter your phone number"
+                                autocomplete="tel"
+                                required
+                            >
+                        </div>
+                    </div>
+
+
+                    <!-- Password -->
+                    <div class="form-group">
+                        <label for="password">Password</label>
+
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-lock"></i>
+
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Create a password"
+                                autocomplete="new-password"
+                                required
+                            >
+                        </div>
+                    </div>
+
+
+                    <!-- Confirm Password -->
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-lock"></i>
+
+                            <input
+                                type="password"
+                                id="confirmPassword"
+                                name="confirmPassword"
+                                placeholder="Confirm your password"
+                                autocomplete="new-password"
+                                required
+                            >
+                        </div>
+                    </div>
+
+
+                    <!-- Terms -->
+                    <div class="terms-group">
+                        <input type="checkbox" id="terms" required>
+
+                        <label for="terms">
+                            I agree to the
+                            <a href="#">Terms & Conditions</a>
+                            and
+                            <a href="#">Privacy Policy</a>
+                        </label>
+                    </div>
+
+
+                    <!-- Submit -->
+                    <button type="submit" class="auth-submit-btn">
+                        Create Account
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </form>
+
+
+                <div class="auth-divider">
+                    <span>OR</span>
+                </div>
+
+
+                <p class="auth-switch">
+                    Already have an account?
+                    <a href="login.html">Login Now</a>
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="js/register.js"></script>
+
+</body>
+</html>

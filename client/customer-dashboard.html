@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodie | Customer Dashboard</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Dashboard CSS -->
+    <link rel="stylesheet" href="css/dashboard.css">
+
+</head>
+
+<body>
+    <div class="dashboard-container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+                <h2>Foodie<span>.</span></h2>
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <a href="#" class="nav-link active">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="explore-food.html" class="nav-link">
+                    <i class="fa-solid fa-utensils"></i>
+                    <span>Explore Food</span>
+                </a>
+
+                <a href="my-orders.html" class="nav-link">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span>My Orders</span>
+                </a>
+
+                <a href="profile.html" class="nav-link">
+                    <i class="fa-solid fa-user"></i>
+                    <span>My Profile</span>
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+
+                <a href="#" class="nav-link logout-link">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <!-- TOPBAR -->
+            <header class="dashboard-header">
+
+                <!-- SEARCH -->
+                <form class="header-search" id="dashboardSearchForm">
+                    <input
+                        type="text"
+                        id="dashboardSearch"
+                        placeholder="Search delicious food..."
+                    >
+
+                    <button type="submit" aria-label="Search food">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+
+                <div class="header-user">
+
+                    <!-- NOTIFICATION -->
+                    <div class="notification-wrapper">
+
+                        <button
+                            class="notification-btn"
+                            id="notificationBtn"
+                            type="button"
+                            aria-label="Notifications"
+                        >
+                            <i class="fa-regular fa-bell"></i>
+                            <span class="notification-dot" id="notificationDot"></span>
+                        </button>
+
+                        <div class="notification-panel" id="notificationPanel" hidden>
+                            <div class="notification-header">
+                                <h3>Notifications</h3>
+                                <span>Recent order updates</span>
+                            </div>
+
+                            <div id="notificationList">
+                                <p class="notification-empty">Loading notifications...</p>
+                            </div>
+
+                            <a href="my-orders.html" class="notification-footer">
+                                View All Orders
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <!-- PROFILE -->
+                    <div class="user-info">
+                        <a href="profile.html" class="user-avatar">
+                            <i class="fa-solid fa-user"></i>
+                        </a>
+
+                        <div>
+                            <h4 id="headerUsername">Loading...</h4>
+                            <p>Customer</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </header>
+
+            <!-- DASHBOARD CONTENT -->
+            <section class="dashboard-content">
+
+                <!-- WELCOME BANNER -->
+                <div class="welcome-banner">
+
+                    <div class="welcome-text">
+                        <p class="welcome-label">WELCOME BACK!</p>
+
+                        <h1 id="welcomeUsername">Hello! 👋</h1>
+
+                        <p>
+                            Discover delicious food and satisfy your cravings.
+                            Your next favorite meal is waiting for you!
+                        </p>
+
+                        <a href="explore-food.html" class="explore-btn">
+                            Explore Food
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="welcome-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600"
+                            alt="Delicious burger"
+                        >
+                    </div>
+
+                </div>
+
+                <!-- STATISTICS CARDS -->
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon orange">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                        </div>
+
+                        <div class="stat-info">
+                            <p>Total Orders</p>
+                            <h2 id="totalOrders">0</h2>
+                            <span>All your orders</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon green">
+                            <i class="fa-solid fa-check-circle"></i>
+                        </div>
+
+                        <div class="stat-info">
+                            <p>Completed</p>
+                            <h2 id="completedOrders">0</h2>
+                            <span>Successfully delivered</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon blue">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+
+                        <div class="stat-info">
+                            <p>Pending Orders</p>
+                            <h2 id="pendingOrders">0</h2>
+                            <span>Waiting for delivery</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- ==============================
+                    FOOD CATEGORIES
+                ============================== -->
+
+                <section class="food-categories">
+
+                    <div class="section-header">
+                        <div>
+                            <h2>Food Categories</h2>
+                            <p>Explore food according to your taste</p>
+                        </div>
+
+                        <a href="explore-food.html">View All <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+
+
+                    <div class="category-grid">
+
+                        <div class="category-card">
+                            <div class="category-image">
+                                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=300"
+                                    alt="Burger">
+                            </div>
+                            <h4>Burgers</h4>
+                        </div>
+
+                        <div class="category-card">
+                            <div class="category-image">
+                                <img src="https://images.unsplash.com/photo-1579751626657-72bc17010498?w=300"
+                                    alt="Pizza">
+                            </div>
+                            <h4>Pizza</h4>
+                        </div>
+
+                        <div class="category-card">
+                            <div class="category-image">
+                                <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=300"
+                                    alt="Noodles">
+                            </div>
+                            <h4>Noodles</h4>
+                        </div>
+
+                        <div class="category-card">
+                            <div class="category-image">
+                                <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=300"
+                                    alt="Desserts">
+                            </div>
+                            <h4>Desserts</h4>
+                        </div>
+
+                        <div class="category-card">
+                            <div class="category-image">
+                                <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=300"
+                                    alt="Beverages">
+                            </div>
+                            <h4>Beverages</h4>
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!-- ==============================
+                    POPULAR DISHES
+                ============================== -->
+
+                <section class="popular-dishes">
+
+                    <div class="section-header">
+                        <div>
+                            <h2>Popular Dishes</h2>
+                            <p>Our most loved dishes by customers</p>
+                        </div>
+
+                        <a href="explore-food.html">View All <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+
+
+                    <div class="food-grid">
+
+                        <!-- FOOD CARD 1 -->
+                        <div class="food-card">
+
+                            <div class="food-image">
+                                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500"
+                                    alt="Classic Burger">
+
+                                <button class="favorite-btn">
+                                    <i class="fa-regular fa-heart"></i>
+                                </button>
+
+                                <span class="food-tag">Popular</span>
+                            </div>
+
+                            <div class="food-details">
+
+                                <div class="food-rating">
+                                    <i class="fa-solid fa-star"></i>
+                                    <span>4.8</span>
+                                </div>
+
+                                <h3>Classic Burger</h3>
+
+                                <p>Juicy burger with fresh vegetables and cheese.</p>
+
+                                <div class="food-card-bottom">
+                                    <h4>₹149</h4>
+
+                                    <button class="add-cart-btn">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </button>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- FOOD CARD 2 -->
+                        <div class="food-card">
+
+                            <div class="food-image">
+                                <img src="https://images.unsplash.com/photo-1579751626657-72bc17010498?w=500"
+                                    alt="Cheese Pizza">
+
+                                <button class="favorite-btn">
+                                    <i class="fa-regular fa-heart"></i>
+                                </button>
+                            </div>
+
+                            <div class="food-details">
+
+                                <div class="food-rating">
+                                    <i class="fa-solid fa-star"></i>
+                                    <span>4.9</span>
+                                </div>
+
+                                <h3>Cheese Pizza</h3>
+
+                                <p>Delicious cheesy pizza with fresh toppings.</p>
+
+                                <div class="food-card-bottom">
+                                    <h4>₹249</h4>
+
+                                    <button class="add-cart-btn">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </button>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- FOOD CARD 3 -->
+                        <div class="food-card">
+
+                            <div class="food-image">
+                                <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=500"
+                                    alt="Spicy Noodles">
+
+                                <button class="favorite-btn">
+                                    <i class="fa-regular fa-heart"></i>
+                                </button>
+                            </div>
+
+                            <div class="food-details">
+
+                                <div class="food-rating">
+                                    <i class="fa-solid fa-star"></i>
+                                    <span>4.7</span>
+                                </div>
+
+                                <h3>Spicy Noodles</h3>
+
+                                <p>Hot and spicy noodles with fresh vegetables.</p>
+
+                                <div class="food-card-bottom">
+                                    <h4>₹129</h4>
+
+                                    <button class="add-cart-btn">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </button>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- FOOD CARD 4 -->
+                        <div class="food-card">
+
+                            <div class="food-image">
+                                <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500"
+                                    alt="Veggie Pizza">
+
+                                <button class="favorite-btn">
+                                    <i class="fa-regular fa-heart"></i>
+                                </button>
+                            </div>
+
+                            <div class="food-details">
+
+                                <div class="food-rating">
+                                    <i class="fa-solid fa-star"></i>
+                                    <span>4.6</span>
+                                </div>
+
+                                <h3>Veggie Pizza</h3>
+
+                                <p>Fresh vegetables and delicious mozzarella cheese.</p>
+
+                                <div class="food-card-bottom">
+                                    <h4>₹199</h4>
+
+                                    <button class="add-cart-btn">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </button>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ==============================
+                    RECENT ORDERS
+                ============================== -->
+
+                <section class="recent-orders">
+
+                    <div class="section-header">
+                        <div>
+                            <h2>Recent Orders</h2>
+                            <p>Track your latest food orders</p>
+                        </div>
+
+                        <a href="my-orders.html">View All <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="orders-table-container">
+
+                        <table class="orders-table">
+
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Food Item</th>
+                                    <th>Date</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="recentOrdersBody">
+                                <tr>
+                                    <td colspan="6" style="text-align:center;">
+                                        Loading your recent orders...
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </section>
+        </main>
+    </div>
+
+    <!-- Dashboard JavaScript -->
+     <script src="js/food-data.js"></script>
+    <script src="js/dashboard.js"></script>
+
+</body>
+</html>

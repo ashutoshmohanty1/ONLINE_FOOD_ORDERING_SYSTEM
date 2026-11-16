@@ -1,0 +1,493 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Checkout | Foodie</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/checkout.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+</head>
+
+<body>
+
+    <main class="checkout-container">
+
+        <!-- =====================================
+             HEADER
+        ====================================== -->
+
+        <header class="checkout-header">
+
+            <a href="cart.html" class="back-link">
+                <i class="fa-solid fa-arrow-left"></i>
+                Back to Cart
+            </a>
+
+            <h1>Complete Your <span>Order</span></h1>
+
+            <p>Just a few steps away from enjoying your food.</p>
+
+        </header>
+
+
+        <div class="checkout-layout">
+
+            <!-- =====================================
+                 LEFT SECTION
+            ====================================== -->
+
+            <div class="checkout-left">
+
+
+                <!-- 1. DELIVERY ADDRESS -->
+
+                <section class="checkout-card">
+
+                    <div class="checkout-section-heading">
+
+                        <div class="heading-icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+
+                        <div>
+                            <h2>Delivery Address</h2>
+                            <p>Where should we deliver your order?</p>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Saved addresses -->
+                    <div id="addressList">
+
+                        <!-- Addresses loaded from MongoDB -->
+
+                    </div>
+
+
+                    <!-- Add address button -->
+                    <button
+                        type="button"
+                        id="addAddressButton"
+                        class="add-address-btn"
+                    >
+                        <i class="fa-solid fa-plus"></i>
+                        Add New Address
+                    </button>
+
+
+                    <!-- ADDRESS FORM -->
+
+                    <form id="addressForm" hidden>
+
+                        <h3>Add Delivery Address</h3>
+
+
+                        <div class="form-group">
+
+                            <label for="addressName">
+                                Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="addressName"
+                                placeholder="Enter your full name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="addressPhone">
+                                Phone Number
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="addressPhone"
+                                placeholder="Enter 10-digit phone number"
+                                pattern="[0-9]{10}"
+                                maxlength="10"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="addressLine">
+                                House / Street Address
+                            </label>
+
+                            <textarea
+                                id="addressLine"
+                                placeholder="House number, street name, area"
+                                required
+                            ></textarea>
+
+                        </div>
+
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+
+                                <label for="addressCity">
+                                    City
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="addressCity"
+                                    placeholder="City"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="addressState">
+                                    State
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="addressState"
+                                    placeholder="State"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="addressPincode">
+                                PIN Code
+                            </label>
+
+                            <input
+                                type="text"
+                                id="addressPincode"
+                                placeholder="6-digit PIN code"
+                                pattern="[0-9]{6}"
+                                maxlength="6"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="address-form-actions">
+
+                            <button
+                                type="submit"
+                                class="save-address-btn"
+                            >
+                                Save Address
+                            </button>
+
+                            <button
+                                type="button"
+                                id="cancelAddressButton"
+                                class="cancel-btn"
+                            >
+                                Cancel
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </section>
+
+
+
+                <!-- 2. PAYMENT METHOD -->
+
+                <section class="checkout-card">
+
+                    <div class="checkout-section-heading">
+
+                        <div class="heading-icon">
+                            <i class="fa-solid fa-money-bill-wave"></i>
+                        </div>
+
+                        <div>
+                            <h2>Payment Method</h2>
+                            <p>Pay when your food arrives at your doorstep.</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="payment-options">
+
+                        <label class="payment-option selected">
+
+                            <input
+                                type="radio"
+                                name="paymentMethod"
+                                value="cod"
+                                checked
+                                disabled
+                            >
+
+                            <div class="payment-icon">
+                                <i class="fa-solid fa-money-bill-wave"></i>
+                            </div>
+
+                            <div class="payment-details">
+                                <h3>Cash on Delivery</h3>
+                                <p>Pay cash after receiving your order.</p>
+                            </div>
+
+                            <i class="fa-solid fa-circle-check payment-check"></i>
+
+                        </label>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- 3. PLACE ORDER -->
+
+                <section class="checkout-card place-order-section">
+
+                    <div class="checkout-section-heading">
+
+                        <div class="heading-icon">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                        </div>
+
+                        <div>
+                            <h2>Confirm Your Order</h2>
+                            <p>Review your details before placing your order.</p>
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        id="placeOrderButton"
+                        class="place-order-btn"
+                    >
+                        Place Order
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+
+                    <p class="secure-message">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        Your information is securely protected.
+                    </p>
+
+
+                    <p id="checkoutMessage" role="alert"></p>
+
+                </section>
+
+            </div>
+
+
+
+            <!-- =====================================
+                 RIGHT SECTION: ORDER SUMMARY
+            ====================================== -->
+
+            <aside class="checkout-right">
+
+                <section class="checkout-card order-summary-card">
+
+                    <h2>Order Summary</h2>
+
+
+                    <div id="checkoutItems">
+
+                        <!-- MongoDB cart items will appear here -->
+
+                    </div>
+
+
+                    <div class="summary-divider"></div>
+
+
+                    <div class="summary-row">
+
+                        <span>Subtotal</span>
+
+                        <strong id="checkoutSubtotal">
+                            ₹0.00
+                        </strong>
+
+                    </div>
+
+
+                    <div class="summary-row">
+
+                        <span>Delivery Fee</span>
+
+                        <strong id="checkoutDeliveryFee">
+                            ₹0.00
+                        </strong>
+
+                    </div>
+
+
+                    <div class="summary-row">
+
+                        <span>Tax (5%)</span>
+
+                        <strong id="checkoutTax">
+                            ₹0.00
+                        </strong>
+
+                    </div>
+
+
+                    <div class="summary-divider"></div>
+
+
+                    <div class="summary-total">
+
+                        <span>Total Amount</span>
+
+                        <strong id="checkoutGrandTotal">
+                            ₹0.00
+                        </strong>
+
+                    </div>
+
+                </section>
+
+            </aside>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =====================================
+         ORDER CONFIRMATION OVERLAY
+    ====================================== -->
+
+    <div
+        id="orderSuccessOverlay"
+        class="order-success-overlay"
+        hidden
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="successTitle"
+    >
+
+        <div class="order-success-content">
+
+
+            <!-- DELIVERY RIDER ANIMATION -->
+
+            <div class="delivery-animation">
+
+                <div class="delivery-road"></div>
+
+                <div class="delivery-rider">
+
+                    <i class="fa-solid fa-motorcycle"></i>
+
+                    <span class="delivery-bag">
+                        <i class="fa-solid fa-burger"></i>
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- SUCCESS ICON -->
+
+            <div class="success-check">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+            </div>
+
+
+            <!-- SUCCESS MESSAGE -->
+
+            <h2 id="successTitle">
+                Order Confirmed!
+            </h2>
+
+            <p>
+                Your delicious food is being prepared.
+            </p>
+
+
+            <!-- ORDER NUMBER -->
+
+            <div
+                class="order-success-number"
+                id="successOrderNumber"
+            ></div>
+
+
+            <!-- REDIRECT LOADER -->
+
+            <div class="redirect-loader">
+
+                <span></span>
+
+            </div>
+
+
+            <p class="redirect-message">
+                Taking you to your dashboard...
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================
+         JAVASCRIPT
+    ====================================== -->
+
+    <script src="js/checkout.js"></script>
+
+</body>
+
+</html>

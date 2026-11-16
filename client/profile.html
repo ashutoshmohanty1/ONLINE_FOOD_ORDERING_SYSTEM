@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Profile | Foodie</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/profile.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+    <main class="profile-page">
+
+        <nav class="profile-nav">
+            <a href="customer-dashboard.html" class="back-link">
+                <i class="fa-solid fa-arrow-left"></i>
+                Back to Dashboard
+            </a>
+
+            <span class="page-label">MY ACCOUNT</span>
+        </nav>
+
+        <section class="profile-banner">
+            <div class="banner-content">
+                <span class="eyebrow">PERSONAL ACCOUNT</span>
+                <h1>My Profile</h1>
+                <p>Manage your personal information and account details.</p>
+            </div>
+
+            <div class="banner-icon">
+                <i class="fa-solid fa-user-astronaut"></i>
+            </div>
+        </section>
+
+        <section class="profile-layout">
+
+            <div class="profile-main-card">
+
+                <div class="profile-identity">
+                    <div class="avatar-wrapper">
+                        <div class="profile-avatar">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <span class="online-indicator"></span>
+                    </div>
+
+                    <div class="identity-info">
+                        <span class="account-label">CUSTOMER ACCOUNT</span>
+                        <h2 id="profileUsername">Loading...</h2>
+                        <p id="profileEmail">Loading...</p>
+                    </div>
+
+                    <div class="verified-badge">
+                        <i class="fa-solid fa-circle-check"></i>
+                        Registered
+                    </div>
+                </div>
+
+                <div class="card-divider"></div>
+
+                <div class="section-heading">
+                    <div>
+                        <h3>Personal Information</h3>
+                        <p>Your registered account information</p>
+                    </div>
+                    <i class="fa-regular fa-id-card"></i>
+                </div>
+
+                <div class="information-grid">
+
+                    <div class="info-box">
+                        <div class="info-icon">
+                            <i class="fa-regular fa-user"></i>
+                        </div>
+                        <div>
+                            <span>Username</span>
+                            <strong id="username">Loading...</strong>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <div class="info-icon">
+                            <i class="fa-regular fa-envelope"></i>
+                        </div>
+                        <div>
+                            <span>Email Address</span>
+                            <strong id="email">Loading...</strong>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <div class="info-icon">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div>
+                            <span>Phone Number</span>
+                            <strong id="phone">Loading...</strong>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <div class="info-icon">
+                            <i class="fa-regular fa-calendar"></i>
+                        </div>
+                        <div>
+                            <span>Member Since</span>
+                            <strong id="createdAt">Loading...</strong>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <aside class="profile-side-card">
+                <div class="side-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+
+                <h3>Account Security</h3>
+                <p>Your account is protected with secure authentication.</p>
+
+                <div class="security-status">
+                    <span class="status-dot"></span>
+                    Authentication Active
+                </div>
+
+                <div class="side-divider"></div>
+
+                <a href="customer-dashboard.html" class="dashboard-button">
+                    <i class="fa-solid fa-house"></i>
+                    Go to Dashboard
+                </a>
+            </aside>
+
+        </section>
+
+    </main>
+
+    <script src="js/profile.js"></script>
+</body>
+</html>
